@@ -12,16 +12,17 @@
         <script src="react/build/react-dom.js"></script>
 
         <script>
-            ReactDOM.render(    
-                React.DOM.h1(
-                    {id: "my-heading"},
-                    React.DOM.span(null, 
-                        React.DOM.em(null, "Hell"),
-                        "o"),
-                    "World!"
-                ),
+            var MyComponent = React.createClass({
+                render:  function() {
+                    return React.DOM.span(null, "I'm so custom");
+                }
+            });
+
+            ReactDOM.render(
+                React.createElement(MyComponent),
                 document.getElementById("app")
             )
+            
         </script>    
     </body>
 </html>
