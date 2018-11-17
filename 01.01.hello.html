@@ -12,12 +12,15 @@
         <script src="react/build/react-dom.js"></script>
 
         <script>
-        ReactDOM.render(    
-        React.DOM.h1({id: "heading"},
-            React.DOM.em({class: "test"}, "Hello"),
-            "World"
-            ),
-            document.getElementById("app")
+            ReactDOM.render(    
+                React.DOM.h1(
+                    {id: "my-heading"},
+                    React.DOM.span(null, 
+                        React.DOM.em(null, "Hell"),
+                        "o"),
+                    "World!"
+                ),
+                document.getElementById("app")
             )
         </script>    
     </body>
