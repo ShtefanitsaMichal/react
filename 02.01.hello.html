@@ -12,14 +12,37 @@
         <script src="react/build/react-dom.js"></script>
 
         <script>
-            var MyComponent = React.createClass({
+            var Component = React.createClass({
                 render:  function() {
-                    return React.DOM.span(null, "I'm so custom");
+                    return React.DOM.span(null, "My name is " + 
+                    this.props.name);
                 }
             });
 
             ReactDOM.render(
-                React.createElement(MyComponent),
+                React.createElement(Component, {
+                    countries: [{
+                        id: '1',
+                        name: 'Ukraine'
+                    },
+                    {
+                        id: '2',
+                        name: 'USA'
+                    },
+                    {
+                        id: '3',
+                        name: 'England'
+                    },
+                    {
+                        id: '4',
+                        name: 'Spain'
+                    },
+                    {
+                        id: '5',
+                        name: 'Poland'
+                    }]
+
+                }),
                 document.getElementById("app")
             )
             
