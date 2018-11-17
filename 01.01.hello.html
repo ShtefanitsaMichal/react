@@ -10,15 +10,14 @@
         <div id="app"></div>
         <script src="react/build/react.js"></script>
         <script src="react/build/react-dom.js"></script>
-
         <script>
             ReactDOM.render(    
                 React.DOM.h1(
-                    {id: "my-heading"},
-                    React.DOM.span(null, 
-                        React.DOM.em(null, "Hell"),
-                        "o"),
-                    "World!"
+                    {
+                        className: "pretty",
+                        htmlFor: "me",
+                    },
+                    "Hello World!"
                 ),
                 document.getElementById("app")
             )
