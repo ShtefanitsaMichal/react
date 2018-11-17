@@ -13,28 +13,29 @@
 
         <script>
 
-            var Component = React.createClass({
+            var TextAreaCounter = React.createClass({
                 propTypes: {
-                    firstName: React.PropTypes.string.isRequired,
-                    middleName: React.PropTypes.string,
-                    familyName: React.PropTypes.string.isRequired,
-                    adress: React.PropTypes.string,
+                    text: React.PropTypes.string
                 },
 
                 getDefaultProprs: function() {
                     return {
-                      
-                        middleName: '',
-                        adress: 'n/a',
-                        
+                        text: '',            
                     };
                 },
-                render:  function() {/* */}
+                
+                render:  function() {
+                    return React.DOM.div(null, 
+                        React.DOM.textarea({defaultValue: this.props.text,
+                    }),
+                    React.DOM.h3(null, this.props.text.length)
+                    );
+                }
             });
 
             ReactDOM.render(
-                React.createElement(Component, {
-                    firstName: 'Oksana',
+                React.createElement(TextAreaCounter, {
+                    text: 'Bobsadas',
                     }),
                 document.getElementById("app")
             )
