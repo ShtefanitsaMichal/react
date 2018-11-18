@@ -14,7 +14,6 @@
         <script>
             var Component = React.createClass({
                 propTypes: {
-<<<<<<< HEAD
                     firstName: React.PropTypes.string.isRequired,
                     middleName: React.PropTypes.string,
                     familyName: React.PropTypes.string.isRequired,
@@ -30,30 +29,18 @@
                 },
 
                 render:  function(){
-                    return React.DOM.div(null, React.DOM.textarea({
+                        return React.DOM.div(null, React.DOM.textarea({
                         value: this.state.text,
                         nChange: this._textChange,
                     }),
-                    React.DOM.h3(null, this.state.text.length)
+                        React.DOM.h3(null, this.state.text.length)
                     );
                 }
             });
 
-            TextAreaCounter = ReactDOM.render(
+            myTextAreaCounter = ReactDOM.render(
                 React.createElement(TextAreaCounter, {
                     defaultValue: "Hello", 
-=======
-                    name: React.PropTypes.string.isRequired,
-                },
-                render:  function() {
-                    return React.DOM.span(null, "My name is " + this.props.name);
-                }
-            });
-
-            ReactDOM.render(
-                React.createElement(Component, {
-                    name: 'Oksana',
->>>>>>> parent of e1583c6... TextAreaCounter
                     }),
                 document.getElementById("app")
             )      
