@@ -10,14 +10,18 @@
         <title>jsx</title>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="example"></div>
         <script type="text/babel">
+            var Block = React.createClass ({
+                render: function(){
+                    return(<h3>M.sztefanca</h3>)
+                }
+            })
+
+
             ReactDOM.render(
-                <h1 id="my-heading">
-                    <span><em>Hell</em>o</span> word!
-                </h1>
-            document.getElementById('app')    
-            );
+                <Block/>,
+                document.getElementById("example"));           
         </script>
     </body>
 </html>
