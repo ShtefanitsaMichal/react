@@ -14,14 +14,29 @@
         <script type="text/babel">
             var Block = React.createClass ({
                 render: function(){
-                    return(<h3>M.sztefanca</h3>)
+
+                const username = 'm.sztefanica';
+                const position = 'Junior Web Developer';
+                    return(
+                    <div>
+                        <h2>{username}</h2>
+                        <h3>{position}</h3>
+                    </div>    
+                    )
                 }
             })
 
+            const place =  document.getElementById("example");       
 
             ReactDOM.render(
-                <Block/>,
-                document.getElementById("example"));           
+                <div>
+                    <Block />
+                    <Block />
+                    <Block />
+                </div>,    
+                place
+            )
+
         </script>
     </body>
 </html>
