@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="react/build/react.js"></script>
+        <script src="react/build/react-dom.js"></script>
+        <script src="babel/browser.js"></script>
+       
+        <title>jsx</title>
+    </head>
+    <body>
+        <div id="conditions"></div>
+        <script type="text/babel">
+            var Check = React.createClass({
+
+                getInitialState: function() {
+                    return {checked: true }
+                }, 
+                
+                toggleCheck: function () {
+                    this.setState({checked: this.state.checked})
+                },
+
+                render: function(){
+                    var message;
+                    if (this.state.checked){
+                        message="chosen"
+                    } else {
+                        message="not chosen"
+                    }
+
+                    return(
+                        <div>
+                            <input type="checkbox" onChange="this.toggleCheck" defaultChecked={this.state.checked}/>
+                            <p>Checkbox {message }</p> 
+                        </div>
+                    );
+                }
+            });
+
+            const app = document.getElementById("conditions")
+            ReactDOM.render(<Check />, app)
+        </script>
+    </body>
+</html>
