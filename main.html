@@ -7,32 +7,43 @@
         <script src="react/build/react.js"></script>
         <script src="react/build/react-dom.js"></script>
         <script src="babel/browser.js"></script>
+        <link rel="stylesheet" href="css/main.css">
         <title>jsx</title>
     </head>
     <body>
-        <div id="example"></div>
+        <div id="program"></div>
         <script type="text/babel">
 
-            var Game = React.createClass({
-                render: function(){
-                    return(
-                        <div>
-                            <h1>{this.props.name}</h1>
-                            <h2>{this.props.age}</h2>  
+            var Task = React.createClass({
+                
+                edit: function () {
+                    alert("Pressed button edit"); 
+                }, 
+
+                remove: function () {
+                    alert("Pressed button remove "); 
+                },  
+
+                render: function() {
+                    return (
+                        <div className="box">
+                            <div className="text">{this.props.children}</div>
+                            <button onClick={this.edit} className="btn light">Edit</button>
+                            <button onClick={this.remove} className="btn red">Remove</button>
                         </div>
+
                     )
                 }
             })
 
-            const place =  document.getElementById("example");       
+            const app =  document.getElementById("program");       
 
             ReactDOM.render(
-                <div>
-                    <Game name="NFS" age="18+"/>
-                    <Game name="GTA" age="16+"/> 
-                    <Game name="MAFIA" age="12+"/>    
-                </div>, 
-                place)
+                <div className="filed">
+                    <Task> Task 1  </Task>
+                    <Task> Task 2  </Task>
+                    <Task> Task 3  </Task>
+                </div> ,app)
 
         </script>
     </body>
