@@ -15,16 +15,27 @@
         <script type="text/babel">
 
             var Task = React.createClass({
+                getInitialState: function(){
+                   return {edit: false}
+                }, 
                 
                 edit: function () {
-                    alert("Pressed button edit"); 
+                    this.setState  ({edit: true}) 
                 }, 
 
                 remove: function () {
                     alert("Pressed button remove "); 
-                },  
+                },
 
-                render: function() {
+                saved: function (){
+                    alert("Saved!!!")
+                },
+
+                save: function () {
+                    this.setState  ({edit: false}),
+                },  
+                
+                rendNorm: function () {
                     return (
                         <div className="box">
                             <div className="text">{this.props.children}</div>
@@ -32,8 +43,27 @@
                             <button onClick={this.remove} className="btn red">Remove</button>
                         </div>
 
-                    )
+                    );
+                },
+
+                rendEdit : function () {
+                    return (
+                        <div className="box">
+                            <textarea value={this.props.children}></textarea>
+                            <button onClick={this.save} className="btn success">Edit</button>
+                        </div>
+                    );
+                },
+
+                render: function () {
+                    if(this.state.edit){
+                        return this.rendEdit ();
+                    } else {
+                        return this.rendNorm ();
+                    }
                 }
+
+                
             })
 
             const app =  document.getElementById("program");       
