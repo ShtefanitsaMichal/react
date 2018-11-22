@@ -20,7 +20,7 @@
                 }, 
                 
                 toggleCheck: function () {
-                    this.setState({checked: this.state.checked})
+                    this.setState({checked: !this.state.checked})
                 },
 
                 render: function(){
@@ -33,7 +33,7 @@
 
                     return(
                         <div>
-                            <input type="checkbox" onChange="this.toggleCheck" defaultChecked={this.state.checked}/>
+                            <input type="checkbox" onChange={this.toggleCheck} defaultChecked={this.state.checked}/>
                             <p>Checkbox {message }</p> 
                         </div>
                     );
